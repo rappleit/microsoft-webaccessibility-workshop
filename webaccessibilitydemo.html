@@ -1,0 +1,346 @@
+<html lang="en">
+
+<head>
+    <title>Cats of Neko Atsume</title>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;1,100;1,300;1,400;1,500;1,700&display=swap');
+
+        html {
+            background-color: #192841;
+        }
+
+        body {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            font-family: 'Roboto', sans-serif;
+
+        }
+
+        .headerContainer {
+            width: 80vw;
+            padding: 50px 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        main {
+            width: 90vw;
+            display: flex;
+            gap: 30px;
+        }
+
+        .leftContainer {
+            width: 75%;
+        }
+
+        .rightContainer {
+            width: 25%;
+        }
+
+        .titleContainer {
+            text-align: left;
+        }
+
+        .playButton {
+            background: none;
+            border: 2px solid #ffffff;
+            color: #ffffff;
+            cursor: pointer;
+            padding: 0;
+            margin: 20px 0;
+        }
+
+        .playButton:hover {
+            background-color: #ffffff;
+            color: #192841;
+        }
+
+        section {
+            background-color: #ffffff;
+            margin: 20px 0;
+            border-radius: 5px;
+            box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+            padding: 20px 50px 40px 50px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+
+        }
+
+        .leftContainer section {
+            align-items: flex-start;
+            text-align: left;
+        }
+
+
+        .abilitiesContainer {
+            display: flex;
+            text-align: center;
+        }
+
+        .abilitiesCard {
+            margin-right: 50px;
+        }
+
+        .abilitiesImg {
+            width: 80px;
+        }
+
+
+        .pollContainer {
+            display: flex;
+            flex-direction: column;
+        }
+
+        .pollButton {
+            background: none;
+            margin: 6px 0;
+            padding: 0;
+            cursor: pointer;
+            border: 2px solid #000000;
+        }
+
+        .pollButton:disabled {
+            color: #000000;
+            cursor: default;
+        }
+
+        .galleryImg {
+            height: 120px;
+        }
+
+        .pauseGalleryButton {
+            margin-top: 10px;
+            padding: 8px 10px;
+            background: none;
+            border: 2px solid #000000;
+            color: #000000;
+            cursor: pointer;
+        }
+
+        .pauseGalleryButton:hover {
+            background: #000000;
+            color: #ffffff;
+        }
+
+        .screenshotsContainer {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .socialButtonContainer {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+        }
+
+        .socialButton {
+            width: 130px;
+            margin-bottom: 10px;
+        }
+
+        #slides {
+            position: relative;
+            height: 150px;
+            padding: 0px;
+            margin: 0px;
+            list-style-type: none;
+        }
+
+        .slide {
+            position: absolute;
+            left: 0px;
+            top: 0px;
+            width: 100%;
+            height: 100%;
+            opacity: 0;
+            z-index: 1;
+
+            -webkit-transition: opacity 1s;
+            -moz-transition: opacity 1s;
+            -o-transition: opacity 1s;
+            transition: opacity 1s;
+        }
+
+        .showing {
+            opacity: 1;
+            z-index: 2;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="headerContainer">
+        <div class="titleContainer">
+            <h1>Cats of Neko Atsume</h1>
+            <h2>Collect them all!</h2>
+            <button class="playButton">Play Now!</button>
+        </div>
+        <img src="/assets/bannerImg.png" width="300px" />
+    </div>
+
+
+    <main>
+
+        <div class="leftContainer">
+            <section class="about">
+                <h3>About Neko Atsume Cats</h3>
+                <p>In Neko Atsume, players lure cats to visit their Yard with Goodies and Food. The player needs to exit
+                    the game in order for the cats to appear. Upon returning to the game, the player may see cats
+                    interacting with the goodies. There are many cats in the game, and each cat has a different range of
+                    items with which it will interact with. Therefore, the player has to set out different Goodies in
+                    order to be visited by all the cats.</p>
+                <h3>Abilities</h3>
+                <div class="abilitiesContainer">
+                    <div class="abilitiesCard">
+                        <img src="assets/sleepIcon.png" class="abilitiesImg" />
+                        <p>Napping</p>
+                    </div>
+                    <div class="abilitiesCard">
+                        <img src="assets/petbowlIcon.png" class="abilitiesImg" />
+                        <p>Eating</p>
+                    </div>
+                    <div class="abilitiesCard">
+                        <img src="assets/yarnIcon.png" class="abilitiesImg" />
+                        <p>Playing</p>
+                    </div>
+                    <div class="abilitiesCard">
+                        <img src="assets/heartIcon.png" class="abilitiesImg" />
+                        <p>Providing <br> Emotional Support</p>
+                    </div>
+                </div>
+            </section>
+            <section class="screenshots">
+                <h3>Screenshots</h3>
+                <div class="screenshotsContainer">
+                    <img src="assets/galleryImage1.png" class="galleryImg">
+                    <img src="assets/galleryImage2.png" class="galleryImg">
+                    <img src="assets/galleryImage3.png" class="galleryImg">
+                    <img src="assets/galleryImage4.png" class="galleryImg">
+
+                </div>
+            </section>
+            <section class="socials">
+                <h3>Socials</h3>
+                <div class="socialButtonContainer">
+                    <a href="https://www.instagram.com/nekoatsume.official/?hl=en">
+                        <img src="/assets/instagramButton.png" class="socialButton" />
+                    </a>
+                    <a href="https://twitter.com/nekoatsume_tw">
+                        <img src="/assets/twitterButton.png" class="socialButton" />
+                    </a>
+                </div>
+
+            </section>
+
+        </div>
+        <div class="rightContainer">
+            <section class="gallery">
+                <h3>Gallery</h3>
+                <ul id="slides">
+                    <li class="slide showing">
+                        <img src="assets/mrMeowji.png" class="galleryImg">
+                    </li>
+                    <li class="slide">
+                        <img src="assets/tubbs.png" class="galleryImg">
+                    </li>
+                    <li class="slide">
+                        <img src="assets/whiteshadow.png" class="galleryImg">
+                    </li>
+                    <li class="slide">
+                        <img src="assets/hermeowne.png" class="galleryImg">
+                    </li>
+                </ul>
+
+            </section>
+            <section class="poll">
+                <h3>How many cats do you think there are in Neko Atsume?</h3>
+                <p>Choose one option!</p>
+                <div class="pollContainer">
+                    <button id="60option" class="pollButton" onclick="selectButton('60option')">60</button>
+                    <button id="58option" class="pollButton" onclick="selectButton('58option')">58</button>
+                    <button id="66option" class="pollButton" onclick="selectButton('66option')">66</button>
+                    <button id="64option" class="pollButton" onclick="selectButton('64option')">64</button>
+                    <p id="pollMsg"></p>
+                </div>
+
+            </section>
+            <section class="popular">
+                <h3>Popular Cats</h3>
+                <a class="popLink" href="https://nekoatsume.fandom.com/wiki/Mr._Meowgi">Link 1</a>
+                <a class="popLink" href="https://nekoatsume.fandom.com/wiki/Hermeowne">Link 2</a>
+                <a class="popLink" href="https://nekoatsume.fandom.com/wiki/Frosty">Link 3</a>
+                <a class="popLink" href="https://nekoatsume.fandom.com/wiki/Whiteshadow">Link 4</a>
+            </section>
+
+
+        </div>
+
+    </main>
+
+
+</body>
+
+<script>
+    var slides = document.querySelectorAll('#slides .slide');
+    var currentSlide = 0;
+    var slideInterval = setInterval(nextSlide, 2000);
+
+    function nextSlide() {
+        slides[currentSlide].className = 'slide';
+        currentSlide = (currentSlide + 1) % slides.length;
+        slides[currentSlide].className = 'slide showing';
+    }
+
+    var playing = true;
+    var pauseButton = document.getElementById('pause');
+
+    function pauseSlideshow() {
+        pauseButton.innerHTML = 'Play';
+        playing = false;
+        clearInterval(slideInterval);
+    }
+
+    function playSlideshow() {
+        pauseButton.innerHTML = 'Pause';
+        playing = true;
+        slideInterval = setInterval(nextSlide, 2000);
+    }
+
+    pauseButton.onclick = function () {
+        if (playing) { pauseSlideshow(); }
+        else { playSlideshow(); }
+    };
+
+    function pauseButton() {
+        document.getElementById("galleryContainer").removeAttribute("data-flickity");
+        //document.getElementById("galleryContainer").setAttribute("data-flickity", '{ "autoPlay": false, "imagesLoaded": true, "percentPosition": false}');
+    }
+    function selectButton(option) {
+        document.getElementById("66option").style.borderColor = "#228C22";
+        document.getElementById("60option").style.borderColor = "#d1001f";
+        document.getElementById("58option").style.borderColor = "#d1001f";
+        document.getElementById("64option").style.borderColor = "#d1001f";
+
+        document.getElementById("66option").disabled = true;
+        document.getElementById("60option").disabled = true;
+        document.getElementById("58option").disabled = true;
+        document.getElementById("64option").disabled = true;
+
+        /*
+        // Correct/Incorrect Alert
+        if (option == "66option") {
+            document.getElementById("pollMsg").innerHTML = "You are correct!"
+            
+        } else {
+            document.getElementById("pollMsg").innerHTML = "You are incorrect!"
+        }
+        */
+    }
+</script>
+
+</html>
